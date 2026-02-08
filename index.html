@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Accès V1 - Emote Pain</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    /* Titre principal */
+    h1 {
+      font-size: 3.5em;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      margin-bottom: 40px;
+      background: linear-gradient(90deg, #ff00ff, #00ffff, #ffff00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 2s infinite alternate;
+      text-align: center;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 15px #ff00ff; }
+      to { text-shadow: 0 0 40px #00ffff; }
+    }
+
+    /* Zone ID */
+    .id-box {
+      background: rgba(255,255,255,0.05);
+      border: 2px solid #00ffff;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 30px;
+      width: 360px;
+      text-align: center;
+      box-shadow: 0 0 25px #00ffff, inset 0 0 15px #ff00ff;
+      position: relative;
+      overflow: hidden;
+    }
+    .id-box::before {
+      content: "";
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(0,255,255,0.2), transparent);
+      animation: scan 3s infinite;
+    }
+    @keyframes scan {
+      0% { left: -100%; }
+      50% { left: 100%; }
+      100% { left: -100%; }
+    }
+
+    input {
+      width: 90%;
+      padding: 14px;
+      border: none;
+      outline: none;
+      background-color: #111;
+      color: #00ffff;
+      font-size: 1.2em;
+      text-align: center;
+      border-radius: 6px;
+      box-shadow: inset 0 0 12px #00ffff;
+    }
+
+    /* Motif accès limité */
+    .motif {
+      font-size: 1.6em;
+      font-weight: bold;
+      color: #ff4444;
+      text-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff;
+      animation: pulseText 2s infinite;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    @keyframes pulseText {
+      0% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.1); }
+      100% { opacity: 0.5; transform: scale(1); }
+    }
+
+    /* Section infos */
+    .infos {
+      font-size: 1em;
+      color: #ccc;
+      text-align: center;
+      margin-bottom: 20px;
+      max-width: 500px;
+      line-height: 1.5;
+    }
+
+    /* Bouton Telegram */
+    .telegram-link {
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(90deg, #00ffff, #ff00ff);
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 0 20px #00ffff;
+      transition: transform 0.3s ease;
+    }
+    .telegram-link:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px #ff00ff;
+    }
+
+    /* Footer */
+    footer {
+      position: absolute;
+      bottom: 15px;
+      font-size: 0.9em;
+      color: #888;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Accès V1 – Emote Pain</h1>
+  
+  <div class="id-box">
+    <label for="userId">Votre ID :</label><br>
+    <input type="text" id="userId" placeholder="Entrez votre ID">
+  </div>
+  
+  <div class="motif">
+    ✦ Accès limité à 5h ✦
+  </div>
+
+  <div class="infos">
+    Ce portail vous donne un accès exclusif à la version V1.<br>
+    ➤ Entrez votre ID pour activer votre session.<br>
+    ➤ L’accès est limité dans le temps et expire automatiquement après 5 heures.<br>
+    ➤ Pour assistance, mises à jour et nouvelles fonctionnalités, rejoignez notre canal Telegram.
+  </div>
+
+  <a class="telegram-link" href="https://t.me/unlockskinpain" target="_blank">
+    🔗 Rejoindre sur Telegram
+  </a>
+
+  <footer>
+    © 2026 | Interface Rapo Futuriste
+  </footer>
+</body>
+</html>
