@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#eef0f8">
+  <title>New Transaction Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient background layers -->
+  <div class="ambient ambient--glow" aria-hidden="true"></div>
+  <div class="ambient ambient--vignette" aria-hidden="true"></div>
+
+  <main class="showcase">
+    <div class="showcase__demo">
+
+      <!-- Checkout shell — form, flip card, and pay button -->
+      <div class="checkout-shell" id="checkoutShell">
+        <div class="checkout">
+
+          <div class="checkout__panel">
+
+            <!-- Order summary + payment form -->
+            <div class="checkout-card">
+              <aside class="order-summary" aria-label="Order summary">
+                <h2 class="order-summary__heading">Order summary</h2>
+                <div class="order-summary__product">
+                  <div class="order-summary__thumb" aria-hidden="true">
+                    <span class="order-summary__bottle order-summary__bottle--1"></span>
+                    <span class="order-summary__bottle order-summary__bottle--2"></span>
+                    <span class="order-summary__bottle order-summary__bottle--3"></span>
+                  </div>
+                  <div class="order-summary__info">
+                    <h3 class="order-summary__name">3-Pack Craft Hot Sauce Sampler</h3>
+                    <p class="order-summary__meta">Ghost · Habanero · Smoky Chipotle · 148ml each</p>
+                  </div>
+                </div>
+
+                <dl class="order-summary__lines">
+                  <div class="order-summary__line">
+                    <dt>Subtotal</dt>
+                    <dd>$19.95</dd>
+                  </div>
+                  <div class="order-summary__line">
+                    <dt>Tax</dt>
+                    <dd>$1.90</dd>
+                  </div>
+                  <div class="order-summary__line order-summary__line--total">
+                    <dt>Total</dt>
+                    <dd id="orderTotal">$21.85</dd>
+                  </div>
+                </dl>
+              </aside>
+
+              <div class="checkout-card__divide checkout-card__divide--order" aria-hidden="true"></div>
+
+              <form class="payment-form" id="paymentForm" novalidate>
+                <div class="payment-form__header">
+                  <div>
+                    <h2 class="payment-form__title">Payment details</h2>
+                    <p class="payment-form__subtitle">Secure checkout · SSL encrypted</p>
+                  </div>
+                  <div class="payment-form__badges" aria-hidden="true">
+                    <span class="payment-form__badge">VISA</span>
+                    <span class="payment-form__badge payment-form__badge--mc">MC</span>
+                  </div>
+                </div>
+
+                <div class="payment-form__field">
+                  <label class="payment-form__label" for="formNumber">Card number</label>
+                  <div class="payment-form__control">
+                    <input
+                      type="text"
+                      class="payment-form__input"
+                      id="formNumber"
+                      inputmode="numeric"
+                      autocomplete="cc-number"
+                      placeholder="0000 0000 0000 0000"
+                      maxlength="19"
+                      spellcheck="false"
+                    >
+                    <span class="payment-form__tick" aria-hidden="true"></span>
+                  </div>
+                </div>
+
+                <div class="payment-form__field">
+                  <label class="payment-form__label" for="formName">Name on card</label>
+                  <div class="payment-form__control">
+                    <input
+                      type="text"
+                      class="payment-form__input"
+                      id="formName"
+                      autocomplete="cc-name"
+                      placeholder="Full name"
+                      maxlength="26"
+                      spellcheck="false"
+                    >
+                    <span class="payment-form__tick" aria-hidden="true"></span>
+                  </div>
+                </div>
+
+                <div class="payment-form__row">
+                  <div class="payment-form__field">
+                    <label class="payment-form__label" for="formExpiry">Expiry</label>
+                    <div class="payment-form__control">
+                      <input
+                        type="text"
+                        class="payment-form__input"
+                        id="formExpiry"
+                        inputmode="numeric"
+                        autocomplete="cc-exp"
+                        placeholder="MM / YY"
+                        maxlength="7"
+                        spellcheck="false"
+                      >
+                      <span class="payment-form__tick" aria-hidden="true"></span>
+                    </div>
+                  </div>
+
+                  <div class="payment-form__field">
+                    <label class="payment-form__label" for="formCvv">CVV</label>
+                    <div class="payment-form__control">
+                      <input
+                        type="text"
+                        class="payment-form__input"
+                        id="formCvv"
+                        inputmode="numeric"
+                        autocomplete="cc-csc"
+                        placeholder="123"
+                        maxlength="3"
+                        spellcheck="false"
+                      >
+                      <span class="payment-form__tick" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <!-- Flip card + pay button -->
+            <aside class="checkout__aside" aria-label="Card preview and payment">
+              <div class="checkout__card">
+                <div class="flip-card" id="flipCard" tabindex="0" role="button" aria-label="Card preview — hover or tap to flip">
+                  <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <p class="heading_8264">MASTERCARD</p>
+                    <svg class="logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="36" height="36" viewBox="0 0 48 48" aria-hidden="true">
+                      <path fill="#ff9800" d="M32 10A14 14 0 1 0 32 38A14 14 0 1 0 32 10Z"></path>
+                      <path fill="#d50000" d="M16 10A14 14 0 1 0 16 38A14 14 0 1 0 16 10Z"></path>
+                      <path fill="#ff3d00" d="M18,24c0,4.755,2.376,8.95,6,11.48c3.624-2.53,6-6.725,6-11.48s-2.376-8.95-6-11.48 C20.376,15.05,18,19.245,18,24z"></path>
+                    </svg>
+                    <img class="chip" src="images/card-chip.png" width="40" height="30" alt="" aria-hidden="true">
+                    <svg version="1.1" class="contactless" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 50 50" aria-hidden="true">
+                      <image width="50" height="50" x="0" y="0" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAQAAAC0NkA6AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfnAg0IEzgIwaKTAAADDklEQVRYw+1XS0iUURQ+f5qPyjQflGRFEEFK76koKGxRbWyVVLSOgsCgwjZBJJYuKogSIoOonUK4q3U0WVBWFPZYiIE6kuArG3VGzK/FfPeMM/MLt99/NuHdfPd888/57jn3nvsQWWj/VcMlvMMd5KRTogqx9iCdIjUUmcGR9ImUYowyP3xNGQJoRLVaZ2DaZf8kyjEJALhI28ELioyiwC+Rc3QZwRYyO/DH51hQgWm6DMIh10KmD4u9O16K49itVoPOAmcGAWWOepXIRScAoJZ2Frro8oN+EyTT6lWkkg6msZfMSR35QTJmjU0g15tIGSJ08ZZMJkJkHpNZgSkyXosS13TkJpZ62mPIJvOSzC1bp8vRhhCakEk7G9/o4gmZdbpsTcKu0m63FbnBP9Qrc15zbkbemfgNDtEOI8NO5L5O9VYyRYgmJayZ9nPaxZrSjW4+F6Uw9yQqIiIZwhp2huQTf6OIvCZyGM6gDJBZbyXifJXr7FZjGXsdxADxI7HUJFB6iWvsIhFpkoiIiGTJfjJfiCuJg2ZEspq9EHGVpYgzKqwJqSAOEwuJQ/pxPvE3cYltJCLdxBLiSKKIE5HxJKcTRNeadxfhDiuYw44zVs1dxKwRk/uCxIiQkxKBsSctRVAge9g1E15EHE6yRUaJecRxcWlukdRIbGFOSZCMWQA/iWauIP3slREHXPyliqBcrrD71AmzZ+rD1Mt2Yr8TZc/UR4/YtFnbijnHi3UrN9vKQ9rPaJf867ZiaqDB+czeKYmd3pNa6fuI75MiC0uXXSR5aEMf7s7a6r/PudVXkjFb/SsrCRfROk0Fx6+H1i9kkTGn/E1vEmt1m089fh+RKdQ5O+xNJPUicUIjO0Dm7HwvErEr0YxeibL1StSh37STafE4I7zcBdRq1DiOkdmlTJVnkQTBTS7X1FYyvfO4piaInKbDCDaT2anLudYXCRFsQBgAcIF2/Okwgvz5+Z4tsw118dzruvIvjhTB+HOuWy8UvovEH6beitBKxDyxm9MmISKCWrzB7bSlaqGlsf0FC0gMjzTg6GgAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjMtMDItMTNUMDg6MTk6NTYrMDA6MDCjlq7LAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIzLTAyLTEzVDA4OjE5OjU2KzAwOjAw0ssWdwAAACh0RVh0ZGF0ZTp0aW1lc3RhbXAAMjAyMy0wMi0xM1QwODoxOTo1NiswMDowMIXeN6gAAAAASUVORK5CYII="></image>
+                    </svg>
+                    <p class="number" id="cardDisplayNumber">9759 2484 5269 6576</p>
+                    <p class="valid_thru">VALID THRU</p>
+                    <p class="date_8264" id="cardDisplayExpiry">1 2 / 2 4</p>
+                    <p class="name" id="cardDisplayName">JOHN SMITH</p>
+                  </div>
+                  <div class="flip-card-back">
+                    <div class="strip"></div>
+                    <div class="mstrip"></div>
+                    <div class="sstrip">
+                      <p class="code" id="cardDisplayCvv">***</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+
+              <!-- POS swipe-to-pay button -->
+              <button
+                type="button"
+                class="txn-card"
+                id="txnCard"
+                aria-label="Pay $21.85 — click to preview card swipe"
+              >
+                <div class="txn-card__left">
+                  <div class="txn-card__credit">
+                    <div class="txn-card__credit-stripe"></div>
+                    <div class="txn-card__credit-chip"></div>
+                  </div>
+
+                  <div class="txn-card__terminal">
+                    <div class="txn-card__terminal-slot"></div>
+                    <div class="txn-card__terminal-screen">
+                      <span class="txn-card__screen-content" id="txnScreen">
+                        <span class="txn-card__amount" id="txnAmount">$</span>
+                        <span class="txn-card__dots" id="txnDots" aria-hidden="true"></span>
+                      </span>
+                    </div>
+                    <div class="txn-card__terminal-keys"></div>
+                    <div class="txn-card__terminal-keys txn-card__terminal-keys--alt"></div>
+                  </div>
+                </div>
+
+                <div class="txn-card__right">
+                  <span class="txn-card__label" id="txnLabel">Pay $21.85</span>
+                  <svg
+                    class="txn-card__arrow"
+                    viewBox="0 0 451.846 451.847"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M345.441 248.292L151.154 442.573c-12.359 12.365-32.397 12.365-44.75 0-12.354-12.354-12.354-32.391 0-44.744L278.318 225.92 106.409 54.017c-12.354-12.359-12.354-32.394 0-44.748 12.354-12.359 32.391-12.359 44.75 0l194.287 194.284c6.177 6.18 9.262 14.271 9.262 22.366 0 8.099-3.091 16.196-9.267 22.373z"
+                    ></path>
+                  </svg>
+                  <span class="txn-card__spinner" aria-hidden="true"></span>
+                  <svg
+                    class="txn-card__check"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="10" fill="#2e9e4f"></circle>
+                    <path
+                      fill="none"
+                      stroke="#ffffff"
+                      stroke-width="2.25"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M8 12.2l2.6 2.6L16 9.4"
+                    ></path>
+                  </svg>
+                </div>
+              </button>
+            </aside>
+          </div>
+        </div>
+
+        <!-- Success overlay — frosted veil + PAID stamp -->
+        <div class="checkout-shell__paid" aria-hidden="true"></div>
+        <div class="checkout-shell__stamp" aria-hidden="true">
+          <span class="checkout-shell__paid-stamp">PAID</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
